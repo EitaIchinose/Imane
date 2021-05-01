@@ -21,3 +21,4 @@ Auth::routes();
 
 // トップ画面を表示
 Route::get('/', 'ItemController@index')->name('index');
+Route::get('/item/create', 'ItemController@newCreate')->name('create');

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-primary">
   <div class="container">
     <div class="navbar-translate">
-      <a class="navbar-brand" href="#pablo" style="font-size:15px;">I.mane</a>
+      <a class="navbar-brand" href="/" style="font-size:15px;">I.mane</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#example-navbar-primary" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-bar bar1"></span>
         <span class="navbar-toggler-bar bar2"></span>
@@ -24,7 +24,7 @@
                   @csrf
               </form>
 
-              <a href="{{ route('crete') }}" class="dropdown-item">画像を追加</a>
+              <a href="{{ route('create') }}" class="dropdown-item">画像を追加</a>
           </div>
         </li>
       </ul>
