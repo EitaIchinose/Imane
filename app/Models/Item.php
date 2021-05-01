@@ -19,5 +19,8 @@ class Item extends Model
         'frequency',
         'category'
     ];
-    
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
