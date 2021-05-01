@@ -24,7 +24,7 @@
                   @csrf
               </form>
 
-              <a href="{{ route('create') }}" class="dropdown-item">画像を追加</a>
+              <a href="{{ route('create') }}" class="dropdown-item">アイテム登録</a>
           </div>
         </li>
       </ul>
