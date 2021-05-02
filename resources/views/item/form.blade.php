@@ -15,9 +15,7 @@
         <input type="file" class="custom-file-input" id="inputFile">
         <label class="custom-file-label" for="inputFile" data-browse="参照">ファイルを選択(ここにドロップすることもできます)</label>
       </div>
-
         <button class="btn btn-primary btn-round" type="button" id="inputFileReset" style="margin-top:0px; background-color:gray;">取消</button>
-
     </div>
   </div>
   <hr/>
