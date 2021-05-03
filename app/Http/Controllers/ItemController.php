@@ -14,9 +14,9 @@ class ItemController extends Controller
      * @return view
      */
     public function index() {
-        $data = Item::all();
+        $items = Item::all();
         if (Auth::check()) {
-            return view('layout', compact('data'));
+            return view('/item/index', ['items' => $items]);
         } else {
             return redirect('login');
         }
@@ -77,7 +77,7 @@ class ItemController extends Controller
 
         try {
         $item->image_name = $request->image_name;
-        $item->path       = $request->path;
+        $item->path       = $fileName;
         $item->color      = $request->color;
         $item->size       = $request->size;
         $item->brand      = $request->brand;
@@ -90,6 +90,8 @@ class ItemController extends Controller
             \DB::rollback();
             abort(500);
         }
+
+        return redirect('/');
 
         // ログイン状態ではない場合、ログイン画面へ遷移する
         if(!Auth::check()) {
