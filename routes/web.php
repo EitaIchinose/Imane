@@ -22,3 +22,5 @@ Auth::routes();
 // トップ画面を表示
 Route::get('/', 'ItemController@index')->name('index');
 Route::get('/item/create', 'ItemController@newCreate')->name('create');
+Route::post('/item/create', 'ItemController@store')->name('store');
+Route::post('/item/confirm', 'ItemController@confirm')->name('confirm');

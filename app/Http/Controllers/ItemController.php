@@ -28,22 +28,73 @@ class ItemController extends Controller
      * @return view
      */
     public function newCreate() {
-        return view('item.form');
+        if (Auth::check()) {
+            return view('item.form');
+        } else {
+            return redirect('login');
+        }
     }
 
-    public function store() {
-        // $request->imgはformのinputのname='img'の値です
-        $path = $request->img->store('public/images');
-        // パスから、最後の「ファイル名.拡張子」の部分だけ取得します 例)sample.jpg
-        $filename = basename($path);
+    public function store(Request $request) {
 
-        $data = new Item;
-        // 登録する項目に必要な値を代入します
-        $data->filename = $filename;
-        // データベースに保存します
-        $data->save;
+        // バリデーション
+        $inputs = $request->all();
 
-        return redirect('/');
+        $rules =[
+            'image_name' => 'required',
+            'path'       => 'required|image',
+            'color'      => 'required',
+            'size'       => 'required',
+            'brand'      => 'required',
+            'frequency'  => 'required',
+            'category'   => 'required'
+        ];
+
+        $validation = \Validator::make($inputs, $rules);
+
+        // バリデーションエラーの場合、元のページへ戻る
+        if($validation->fails())
+        {
+            return redirect()->back()->withErrors($validation->errors())->withInput();
+        }
+
+
+        if($file = $request->path){
+            //保存するファイルに名前をつける
+            $fileName = time().'.'.$file->getClientOriginalExtension();
+            // publicディレクトリにuploadsフォルダを作り保存する
+            $target_path = public_path('/uploads/');
+            $file->move($target_path,$fileName);
+            }else{
+            //画像が登録されなかった時は空文字をいれる
+            $name = "";
+        }
+
+        // 情報を保存
+        $item = new Item();
+
+        \DB::beginTransaction();
+
+        try {
+        $item->image_name = $request->image_name;
+        $item->path       = $request->path;
+        $item->color      = $request->color;
+        $item->size       = $request->size;
+        $item->brand      = $request->brand;
+        $item->frequency  = $request->frequency;
+        $item->category   = $request->category;
+        $item->user_id    = Auth::user()->id;
+        $item->save();
+        \DB::commit();
+        } catch(Exception $e) {
+            \DB::rollback();
+            abort(500);
+        }
+
+        // ログイン状態ではない場合、ログイン画面へ遷移する
+        if(!Auth::check()) {
+            return redirect('login');
+        }
     }
 
 }
