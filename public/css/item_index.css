@@ -8,13 +8,15 @@
   columns: 260px;
   column-gap: 10px;
   margin: 10px;
+  height: 100%;
 }
 #gallery img {
   width: 100%;
   height: auto;
   padding: 8px;   /* 写真外枠を白フチに */
   background-color: #fff;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  /* margin-bottom: 10px; */
   box-sizing: border-box;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
 }
@@ -34,4 +36,17 @@
   font-weight: bold;
   text-shadow: 0px 3px 4px #000;
   z-index: 1;/* position: absolute 指定なので */
+}
+
+.img_wrap{
+  margin: 10px auto 0;
+  transition-duration: 0.5s;
+}
+.img_wrap img{
+  cursor: pointer;
+}
+.img_wrap:hover{
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
 }

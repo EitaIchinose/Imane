@@ -5,8 +5,8 @@
 <body class="item-list">
   <div id="gallery" class="org">
     @foreach($items as $item)
-    <p><img src="/uploads/{{ $item->path }}">
-      <span class="name">{{ $item->image_name }}</span></p>
+    <p class="img_wrap"><a href="#"><img src="/uploads/{{ $item->path }}" class="float">
+      <span class="name">{{ $item->image_name }}</span></a></p>
     @endforeach
   </div>
 </body>
