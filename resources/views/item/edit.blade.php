@@ -3,8 +3,9 @@
 
 @section('content')
 <div class="container">
-  <form action="/item/edit/{id}" method="POST" enctype="multipart/form-data">
-    @csrf
+  <form action="/item/update" method="POST">
+  @csrf
+    <input type="hidden" name="id" value="{{ $item->id }}">
     <div class="form-group">
       <label>アイテム名</label>
       <input type="text" class="form-control @if(!empty($errors->first('image_name'))) is-invalid @endif" id="inputText" placeholder="Input text" value="{{ $item->image_name }}" name="image_name">
@@ -50,7 +51,7 @@
     <div class="select-item">
       <label>着用頻度</label>
       <select class="custom-select @if(!empty($errors->first('frequency'))) is-invalid @endif" name="frequency">
-      <option selected>{{ $frequency }}</option>
+      <option value="{{ $item->frequency }}" selected>{{ $frequency }}</option>
         <option value="1" @if('frequency'=='1') selected @endif>よく着る</option>
         <option value="2" @if('frequency'=='2') selected @endif>たまに着る</option>
         <option value="3" @if('frequency'=='3') selected @endif>あまり着ない</option>
@@ -63,7 +64,7 @@
     <div class="select-item">
       <label>カテゴリー</label>
       <select class="custom-select @if(!empty($errors->first('category'))) is-invalid @endif" name="category">
-      <option selected>{{ $category }}</option>
+      <option value="{{ $item->category }}" selected>{{ $category }}</option>
         <option value="1" @if("$category"=='1') selected @endif>トップス</option>
         <option value="2" @if("$category"=='2') selected @endif>アウター</option>
         <option value="3" @if("$category"=='3') selected @endif>インナー</option>

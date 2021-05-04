@@ -29,3 +29,5 @@ Route::post('/item/create', 'ItemController@store')->name('store');
 Route::get('/item/show/{id}', 'ItemController@show')->name('show');
 // アイテム編集画面を表示
 Route::get('/item/edit/{id}', 'ItemController@edit')->name('edit');
+// アイテム情報を更新する
+Route::post('/item/update', 'ItemController@update')->name('update');

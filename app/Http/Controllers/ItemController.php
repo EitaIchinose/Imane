@@ -183,4 +183,61 @@ class ItemController extends Controller
         ->with('category', $this->setCategoryName($category))
         ->with('frequency', $this->setFrequencyName($frequency));
     }
+
+        /**
+     * アイテム情報を更新する
+     * 
+     * @return view
+     */
+    public function update(Request $request) {
+
+        // バリデーション
+        $input = $request->all();
+
+        $rules =[
+            'image_name' => 'required',
+            'color'      => 'required',
+            'size'       => 'required',
+            'brand'      => 'required',
+            'frequency'  => 'required',
+            'category'   => 'required'
+        ];
+
+        $validation = \Validator::make($input, $rules);
+
+        // バリデーションエラーの場合、元のページへ戻る
+        if($validation->fails())
+        {
+            return redirect()->back()->withErrors($validation->errors())->withInput();
+        }
+
+        $item = Item::find($input['id']);
+        // 情報を保存
+        \DB::beginTransaction();
+
+        try {
+        $item->fill([
+            'image_name' => $input['image_name'],
+            // 'path'       => $input['path'],
+            'color'      => $input['color'],
+            'size'       => $input['size'],
+            'brand'      => $input['brand'],
+            'frequency'  => $input['frequency'],
+            'category'   => $input['category'],
+            // 'user_id'    => $input['user_id']
+        ]);
+        $item->save();
+        \DB::commit();
+        } catch(Exception $e) {
+            \DB::rollback();
+            abort(500);
+        }
+
+        return redirect('/');
+
+        // ログイン状態ではない場合、ログイン画面へ遷移する
+        if(!Auth::check()) {
+            return redirect('login');
+        }
+    }
 }
