@@ -35,6 +35,11 @@ class ItemController extends Controller
         }
     }
 
+    /**
+     * アイテムを登録する
+     * 
+     * @return view
+     */
     public function store(Request $request) {
 
         // バリデーション
@@ -99,4 +104,63 @@ class ItemController extends Controller
         }
     }
 
+    /**
+     * カテゴリー名を表示する
+     * 
+     * @return view
+     */
+    public function setCategoryName($category) {
+        if ($category == 1) {
+            return 'トップス';
+          } elseif ($category == 2) {
+            return 'アウター';
+          } elseif ($category == 3) {
+            return 'インナー';
+          } elseif ($category == 4) {
+            return 'ボトムス';
+          } elseif ($category == 5) {
+            return 'シューズ';
+          } else {
+            return 'カテゴリーが存在しません';
+          }
+    }
+
+    /**
+     * 着用頻度を表示する
+     * 
+     * @return view
+     */
+    public function setFrequencyName($frequency) {
+        if ($frequency == 1) {
+            return 'よく着る';
+          } elseif ($frequency == 2) {
+            return 'たまに着る';
+          } elseif ($frequency == 3) {
+            return 'あまり着ない';
+          } elseif ($frequency == 4) {
+            return '全然着ない';
+          } else {
+            return '存在しない値です。';
+          }
+    }
+
+    /**
+     * アイテム詳細画面を表示する
+     * 
+     * @return view
+     */
+    public function show($id){
+        $item      = Item::find($id);
+        $category  = $item->category;
+        $frequency = $item->frequency;
+
+        // もしデータが空の場合
+        if(is_null($item)) {
+            \Session::flash('err_msg', 'データがありません。');
+            return redirect('/');
+        }
+        return view('item.show', ['item' => $item])
+        ->with('category', $this->setCategoryName($category))
+        ->with('frequency', $this->setFrequencyName($frequency));
+    }
 }

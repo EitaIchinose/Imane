@@ -21,6 +21,9 @@ Auth::routes();
 
 // トップ画面を表示
 Route::get('/', 'ItemController@index')->name('index');
+// アイテム登録画面を表示
 Route::get('/item/create', 'ItemController@newCreate')->name('create');
+// アイテムを登録する
 Route::post('/item/create', 'ItemController@store')->name('store');
-Route::post('/item/confirm', 'ItemController@confirm')->name('confirm');
+// アイテム詳細画面を表示
+Route::get('/item/show/{id}', 'ItemController@show')->name('show');

@@ -1,0 +1,40 @@
+.show-content {
+  display: flex;
+  height: 800px;
+  width: 83.077%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.showImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.show-container {
+  width: calc(83.077% - 700px);
+  margin-left: auto;
+}
+
+.show-item_name {
+  text-align: right;
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+.hr_line {
+  border-width: 2px 0 0 0;
+	border-style: solid;
+	border-color: black;
+  width: 100%;
+}
+
+.btn_group {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
