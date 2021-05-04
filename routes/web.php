@@ -31,3 +31,5 @@ Route::get('/item/show/{id}', 'ItemController@show')->name('show');
 Route::get('/item/edit/{id}', 'ItemController@edit')->name('edit');
 // アイテム情報を更新する
 Route::post('/item/update', 'ItemController@update')->name('update');
+// アイテムを削除する
+Route::post('/item/delete/{id}', 'ItemController@delete')->name('delete');

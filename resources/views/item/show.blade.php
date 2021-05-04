@@ -8,7 +8,10 @@
       <div class="show-img"><img src="/uploads/{{ $item->path }}"></div>
       <div class="btn_group">
         <button type="button" class="edit-btn btn btn-info btn-lg" onclick="location.href='/item/edit/{{ $item->id }}'">編集</a>
-        <button type="button" class="delete-btn btn btn-danger btn-lg" onclick="location.href='/item/delete/{{ $item->id }}'">削除</a>
+        <form method="POST" action="{{ route('delete', $item->id) }}" onSubmit="return checkDelete()">
+          @csrf
+          <button type="submit" class="delete-btn btn btn-danger btn-lg">削除</a>
+        </form>
       </div>
     </div>
     <div class="show-container">
@@ -33,4 +36,14 @@
     </div>
   </div>
 </body>
+
+<script>
+function checkDelete(){
+  if(window.confirm('削除してよろしいですか？')){
+      return true;
+  } else {
+      return false;
+  }
+}
+</script>
 @endsection

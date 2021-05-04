@@ -240,4 +240,24 @@ class ItemController extends Controller
             return redirect('login');
         }
     }
+
+    /**
+     * アイテム削除
+     * 
+     * @return view
+     */
+    public function delete($id) {
+
+        if(empty($id)){
+            \Session::flash('err_msg', 'データがありません。');
+            return redirect(route('edit'));
+        }
+        try {
+            Item::destroy($id);
+        } catch(Exception $e) {
+            abort(500);
+        }
+
+        return redirect('/');
+    }
 }
