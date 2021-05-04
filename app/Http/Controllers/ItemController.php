@@ -163,4 +163,24 @@ class ItemController extends Controller
         ->with('category', $this->setCategoryName($category))
         ->with('frequency', $this->setFrequencyName($frequency));
     }
+
+    /**
+     * アイテム編集画面を表示する
+     * 
+     * @return view
+     */
+    public function edit($id){
+        $item      = Item::find($id);
+        $category  = $item->category;
+        $frequency = $item->frequency;
+
+        // もしデータが空の場合
+        if(is_null($item)) {
+            \Session::flash('err_msg', 'データがありません。');
+            return redirect('/');
+        }
+        return view('item.edit', ['item' => $item])
+        ->with('category', $this->setCategoryName($category))
+        ->with('frequency', $this->setFrequencyName($frequency));
+    }
 }

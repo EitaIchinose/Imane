@@ -38,3 +38,13 @@ h2 {
   display: flex;
   justify-content: space-evenly;
 }
+
+.edit_img {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-img {
+  height: 400px;
+  width: 508px;
+}

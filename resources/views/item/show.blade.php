@@ -7,8 +7,8 @@
     <div class="showImage">
       <div class="show-img"><img src="/uploads/{{ $item->path }}"></div>
       <div class="btn_group">
-        <div class="edit-btn btn btn-info btn-lg">編集</div>
-        <div class="delete-btn btn btn-danger btn-lg">削除</div>
+        <button type="button" class="edit-btn btn btn-info btn-lg" onclick="location.href='/item/edit/{{ $item->id }}'">編集</a>
+        <button type="button" class="delete-btn btn btn-danger btn-lg" onclick="location.href='/item/delete/{{ $item->id }}'">削除</a>
       </div>
     </div>
     <div class="show-container">
