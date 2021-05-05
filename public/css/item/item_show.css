@@ -39,6 +39,11 @@ h2 {
   justify-content: space-evenly;
 }
 
+.show-img {
+  width: 761px;
+  height: 599px;
+}
+
 .edit_img {
   display: flex;
   justify-content: center;

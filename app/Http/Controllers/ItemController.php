@@ -16,7 +16,7 @@ class ItemController extends Controller
     public function index() {
         $items = Item::all();
         if (Auth::check()) {
-            return view('/item/index', ['items' => $items]);
+            return view('/item/index/index', ['items' => $items]);
         } else {
             return redirect('login');
         }
@@ -120,6 +120,8 @@ class ItemController extends Controller
             return 'ボトムス';
           } elseif ($category == 5) {
             return 'シューズ';
+          } elseif ($category == 6) {
+            return 'ビジネス';
           } else {
             return 'カテゴリーが存在しません';
           }

@@ -70,6 +70,7 @@
         <option value="3" @if("$category"=='3') selected @endif>インナー</option>
         <option value="4" @if("$category"=='4') selected @endif>ボトムス</option>
         <option value="5" @if("$category"=='5') selected @endif>シューズ</option>
+        <option value="6" @if("$category"=='6') selected @endif>ビジネス</option>
       </select>
         @if ($errors->first('category'))
           <div class="invalid-feedback">カテゴリーを選択してください</div>

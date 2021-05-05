@@ -13,6 +13,7 @@
   <script src="{{ asset('js/app.js') }}" defer></script>
   <script src="{{ asset('js/popper.min.js') }}" defer></script>
   <script src="{{ asset('js/now-ui-kit.js') }}" defer></script>
+  <!-- <script src="{{ asset('js/ajax.js') }}" defer></script> -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
   <!-- Fonts -->
