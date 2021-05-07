@@ -14,12 +14,10 @@ class ItemController extends Controller
      * @return view
      */
     public function index() {
+
         $items = Item::all();
-        if (Auth::check()) {
-            return view('/item/index/index', ['items' => $items]);
-        } else {
-            return redirect('login');
-        }
+        return view('/item/index/index', ['items' => $items]);
+
     }
 
     /**
@@ -28,11 +26,9 @@ class ItemController extends Controller
      * @return view
      */
     public function newCreate() {
-        if (Auth::check()) {
-            return view('item.form');
-        } else {
-            return redirect('login');
-        }
+
+        return view('item.form');
+
     }
 
     /**
@@ -97,11 +93,7 @@ class ItemController extends Controller
         }
 
         return redirect('/');
-
-        // ログイン状態ではない場合、ログイン画面へ遷移する
-        if(!Auth::check()) {
-            return redirect('login');
-        }
+        
     }
 
     /**
@@ -237,10 +229,6 @@ class ItemController extends Controller
 
         return redirect('/');
 
-        // ログイン状態ではない場合、ログイン画面へ遷移する
-        if(!Auth::check()) {
-            return redirect('login');
-        }
     }
 
     /**

@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'アイテム一覧')
+@section('title', "アイテム一覧")
 
 @section('content')
 <div class="item-list">
@@ -19,8 +19,10 @@
   </div>
   <div id="gallery" class="org">
     @foreach($items as $item)
-    <p class="img_wrap"><a href="/item/show/{{ $item->id }}"><img src="/uploads/{{ $item->path }}" class="float">
-      <span class="name">{{ $item->image_name }}</span></a></p>
+      @if($item->category == $category) 
+        <p class="img_wrap"><a href="/item/show/{{ $item->id }}"><img src="/uploads/{{ $item->path }}" class="float">
+        <span class="name">{{ $item->image_name }}</span></a></p>
+      @endif
     @endforeach
   </div>
 </div>
