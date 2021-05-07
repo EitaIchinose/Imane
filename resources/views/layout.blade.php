@@ -34,9 +34,16 @@
   <header id="app">
     @include('header')
   </header>
-  <br>
-    @yield('content')
-  <footer class="footer bg-dark  fixed-bottom">
+  <div class="wrapper">
+    <div class="left">
+    </div>
+    <div class="center">
+      @yield('content')
+    </div>
+    <div class="right">
+    </div>
+  </div>
+  <footer class="footer bg-dark fixed-bottom">
     @include('footer')
   </footer>
 </body>

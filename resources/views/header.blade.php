@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-primary">
+<nav class="navbar navbar-expand-lg bg-primary" style="margin-bottom:0px;">
   <div class="container">
     <div class="navbar-translate">
       <a class="navbar-brand" href="/" style="font-size:15px;">I.mane</a>
