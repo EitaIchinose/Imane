@@ -52,7 +52,7 @@
           <div class="form-group">
             <label>編集中のアイテム画像</label>
             <div class="input-group edit_img">
-            <img src="/uploads/{{ $item->path }}" class="edit-img">
+            <img src="https://powu.s3-ap-northeast-1.amazonaws.com/{{ $item->path }}" class="edit-img">
             </div>
           </div>
           <div class="d-flex justify-content-around">

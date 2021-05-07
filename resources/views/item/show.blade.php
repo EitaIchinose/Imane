@@ -4,10 +4,10 @@
 @section('content')
 <div class="show-content">
   <div class="showImage">
-    <div><img src="/uploads/{{ $item->path }}" class="show-img"></div>
+    <div><img src="https://powu.s3-ap-northeast-1.amazonaws.com/{{ $item->path }}" class="show-img"></div>
     <div class="btn_group">
       <button type="button" class="edit-btn btn btn-info btn-lg" onclick="location.href='/item/edit/{{ $item->id }}'">編集</a>
-      <form method="POST" action="{{ route('delete', $item->id) }}" onSubmit="return checkDelete()">
+      <form method="POST" action="{{ route('delete', $item->id, $item->path ) }}" onSubmit="return checkDelete()" enctype="multipart/form-data">
         @csrf
         <button type="submit" class="delete-btn btn btn-danger btn-lg">削除</a>
       </form>

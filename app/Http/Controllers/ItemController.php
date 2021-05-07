@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use Illuminate\Support\Facades\Auth;
+use Storage;
 
 class ItemController extends Controller
 {
@@ -59,26 +60,30 @@ class ItemController extends Controller
             return redirect()->back()->withErrors($validation->errors())->withInput();
         }
 
-
-        if($file = $request->path){
-            //保存するファイルに名前をつける
-            $fileName = time().'.'.$file->getClientOriginalExtension();
-            // publicディレクトリにuploadsフォルダを作り保存する
-            $target_path = public_path('/uploads/');
-            $file->move($target_path,$fileName);
-            }else{
-            //画像が登録されなかった時は空文字をいれる
-            $name = "";
-        }
+        // if($file = $request->path){
+        //     //保存するファイルに名前をつける
+        //     $fileName = time().'.'.$file->getClientOriginalExtension();
+        //     // publicディレクトリにuploadsフォルダを作り保存する
+        //     $target_path = public_path('/uploads/');
+        //     $file->move($target_path,$fileName);
+        //     }else{
+        //     //画像が登録されなかった時は空文字をいれる
+        //     $name = "";
+        // }
 
         // 情報を保存
         $item = new Item();
+         //s3アップロード開始
+        $image = $request->file('path');
+        // バケットへアップロード
+        $path = Storage::disk('s3')->putFile('/', $image, 'public');
 
         \DB::beginTransaction();
 
         try {
+        // アップロードした画像のフルパスを取得
+        $item->path       = $path; 
         $item->image_name = $request->image_name;
-        $item->path       = $fileName;
         $item->color      = $request->color;
         $item->size       = $request->size;
         $item->brand      = $request->brand;
@@ -93,7 +98,7 @@ class ItemController extends Controller
         }
 
         return redirect('/');
-        
+
     }
 
     /**
@@ -236,13 +241,20 @@ class ItemController extends Controller
      * 
      * @return view
      */
-    public function delete($id) {
+    public function delete(Request $request) {
+ 
+        $item = Item::find($request->id);
+        $id = $item->id;
+        $image = $item->path;
 
         if(empty($id)){
             \Session::flash('err_msg', 'データがありません。');
             return redirect(route('edit'));
         }
         try {
+            // S3データも一緒に削除
+            $disk = Storage::disk('s3');
+            $disk->delete($image);
             Item::destroy($id);
         } catch(Exception $e) {
             abort(500);
