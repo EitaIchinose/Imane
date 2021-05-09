@@ -20,7 +20,7 @@
   <div id="gallery" class="org">
     @foreach($items as $item)
       @if($item->category == $category) 
-        <p class="img_wrap"><a href="/item/show/{{ $item->id }}"><img src="/uploads/{{ $item->path }}" class="float">
+        <p class="img_wrap"><a href="/item/show/{{ $item->id }}"><img src="https://powu.s3-ap-northeast-1.amazonaws.com/{{ $item->path }}" class="float">
         <span class="name">{{ $item->image_name }}</span></a></p>
       @endif
     @endforeach
