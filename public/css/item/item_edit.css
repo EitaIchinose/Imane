@@ -1,9 +1,9 @@
 .form-wrapper {
   display: flex;
-  height: calc(100vh - 63px - 69px);
+  /* height: calc(100vh - 63px - 69px); */
 }
 
-#edit-content {
+.edit-content {
   overflow: auto;
   -webkit-overflow-scrolling:touch;
 }

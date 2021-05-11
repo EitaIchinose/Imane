@@ -34,7 +34,7 @@
     <div class="left">
     </div>
     <div class="center">
-      <div class="container" id="edit-content">
+      <div class="edit-content">
         <form action="/item/update" method="POST" class="edit-form">
         @csrf
           <input type="hidden" name="id" value="{{ $item->id }}">
