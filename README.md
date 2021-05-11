@@ -37,6 +37,7 @@
 
 ## **表示切り替え機能（カテゴリー別）**
 [![Image from Gyazo](https://i.gyazo.com/e46e7c38beb4c2457ec7b90c716ac79a.gif)](https://gyazo.com/e46e7c38beb4c2457ec7b90c716ac79a)
+
 # 使用技術（開発環境）
 
 ## バックエンド
