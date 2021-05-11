@@ -4,13 +4,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-header {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .wrapper {
@@ -21,11 +14,6 @@ header {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   height: calc(100vh - 63px - 69px);
-}
-
-footer {
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .form-wrapper {
