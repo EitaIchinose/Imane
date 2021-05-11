@@ -38,9 +38,10 @@
     <div class="right">
     </div>
   </div>
-  <footer class="footer bg-dark fixed-bottom">
+  <footer class="footer bg-dark">
     @include('footer')
   </footer>
+
 
   <!-- Scripts -->
   <script src="{{ asset('js/jquery.min.js') }}" type="text/javascript"></script>

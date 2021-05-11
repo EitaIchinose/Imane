@@ -20,8 +20,8 @@ body {
 
 .center {
   width: 1140px;
-  height: auto;
-  overflow: scroll;
+  height: 100%;
+  overflow: auto;
   -webkit-overflow-scrolling:touch;
   margin-right: auto;
   margin-left: auto;
@@ -96,6 +96,6 @@ body {
   }
 
   .wrapper {
-    margin-bottom: 69px;
+    height: auto;
   }
 }
