@@ -11,7 +11,8 @@ body {
   background-image: url('../images/tesukiwashi-pattern-04.jpg');
   background-repeat: repeat;
   display: flex;
-  overflow: auto;
+  overflow: scroll;
+  -webkit-overflow-scrolling:touch;
   height: calc(100vh - 63px);
 }
 
@@ -23,8 +24,6 @@ body {
   width: 1140px;
   margin-right: auto;
   margin-left: auto;
-  overflow: auto;
-  height: calc(100vh - 63px);
 }
 
 #gallery {
