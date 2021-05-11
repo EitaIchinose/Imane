@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use Illuminate\Support\Facades\Auth;
-// use Storage;
-use Intervention\Image\Facades\Image; // Imageファサードを使う
-use Illuminate\Support\Facades\Storage; // Storageファサードを使う
+use Storage;
+use Image;
 
 class ItemController extends Controller
 {
