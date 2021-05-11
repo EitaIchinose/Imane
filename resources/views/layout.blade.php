@@ -38,7 +38,7 @@
     <div class="right">
     </div>
   </div>
-  <footer class="footer bg-dark fixed-bottom" id ="footer">
+  <footer class="footer bg-dark">
     @include('footer')
   </footer>
 
