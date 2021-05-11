@@ -94,4 +94,8 @@ body {
   .center {
     width: 550px;
   }
+
+  .wrapper {
+    margin-bottom: 69px;
+  }
 }
