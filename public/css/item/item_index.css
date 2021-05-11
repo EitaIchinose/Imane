@@ -4,8 +4,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
-  -webkit-overflow-scrolling:touch;
 }
 
 .wrapper {
@@ -13,8 +11,6 @@ body {
   background-image: url('../images/tesukiwashi-pattern-04.jpg');
   background-repeat: repeat;
   display: flex;
-  overflow: scroll;
-  -webkit-overflow-scrolling:touch;
   height: calc(100vh - 63px);
 }
 
@@ -24,6 +20,9 @@ body {
 
 .center {
   width: 1140px;
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling:touch;
   margin-right: auto;
   margin-left: auto;
 }
