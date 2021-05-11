@@ -4,7 +4,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+header {
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -13,8 +18,14 @@ body {
   background-image: url('../images/tesukiwashi-pattern-04.jpg');
   background-repeat: repeat;
   display: flex;
-  overflow: scroll;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
   height: calc(100vh - 63px - 69px);
+}
+
+footer {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .form-wrapper {
