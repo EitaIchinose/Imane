@@ -12,15 +12,11 @@ body {
   background-repeat: repeat;
   display: flex;
   overflow: auto;
-  height: calc(100vh - 63px - 69px);
+  height: calc(100vh - 63px - 21px);
 }
 
 .form-wrapper {
   display: flex;
-}
-
-#footer {
-  -webkit-overflow-scrolling: touch;
 }
 
 .center {
@@ -28,7 +24,7 @@ body {
   margin-right: auto;
   margin-left: auto;
   overflow: auto;
-  height: calc(100vh - 63px - 69px);
+  height: calc(100vh - 63px - 21px);
 }
 
 #gallery {
