@@ -5,6 +5,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .wrapper {
@@ -13,7 +14,6 @@ body {
   background-repeat: repeat;
   display: flex;
   overflow: scroll;
-  -webkit-overflow-scrolling: touch;
   height: calc(100vh - 63px - 69px);
 }
 
