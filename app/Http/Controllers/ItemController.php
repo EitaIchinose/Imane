@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use Illuminate\Support\Facades\Auth;
-use Storage;
+// use Storage;
+use Intervention\Image\Facades\Image; // Imageファサードを使う
+use Illuminate\Support\Facades\Storage; // Storageファサードを使う
 
 class ItemController extends Controller
 {
@@ -73,8 +75,13 @@ class ItemController extends Controller
 
         // 情報を保存
         $item = new Item();
-         //s3アップロード開始
+         //画像を編集
         $image = $request->file('path');
+        $resized_image = Image::make($image)->resize(500, 760, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+        $resized_image->encode('jpg');
+        $resized_image->orientate()->save();
         // バケットへアップロード
         $path = Storage::disk('s3')->putFile('/', $image, 'public');
 

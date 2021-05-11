@@ -8,7 +8,13 @@
 .showImage {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  width: 761px;
+  height: 1000px;
+}
+
+.image-block {
+  margin: 0 auto;
 }
 
 .show-container {
@@ -25,12 +31,13 @@
   text-align: center;
   display: flex;
   justify-content: space-evenly;
+  margin-top: 50px;
 }
 
-.show-img {
+/* .show-img {
   width: 761px;
   height: 505px;
-}
+} */
 
 h3 {
   position: relative;
@@ -80,6 +87,11 @@ h3:after {
   .show-container {
     width: calc(100% - 20px);
     margin: 0 auto;
+  }
+
+  .showImage {
+    width: 380px;
+    height: auto;
   }
 
   .show-img {
