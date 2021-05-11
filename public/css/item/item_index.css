@@ -4,7 +4,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  -webkit-overflow-scrolling: touch;
 }
 
 .wrapper {
@@ -24,6 +23,8 @@ body {
   width: 1140px;
   margin-right: auto;
   margin-left: auto;
+  overflow: auto;
+  height: calc(100vh - 63px - 69px);
 }
 
 #gallery {
