@@ -117,7 +117,7 @@
   </script>
   <div class="right"></div>
 </div>
-<footer class="footer bg-dark fixed-bottom">
+<footer class="footer bg-dark">
   @include('footer')
 </footer>
   <!-- Scripts -->

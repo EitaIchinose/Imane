@@ -1,7 +1,8 @@
 .show-content {
   display: flex;
-  height: 800px;
   margin-top: 15px;
+  overflow: auto;
+  -webkit-overflow-scrolling:touch;
 }
 
 .showImage {
