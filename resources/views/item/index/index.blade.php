@@ -24,4 +24,7 @@
     @endforeach
   </div>
 </div>
+<div class="bg-dark text-center">
+  <span class="text-light">Copyright &copy; 2021 Eita_eng</span>
+</div>
 @endsection
