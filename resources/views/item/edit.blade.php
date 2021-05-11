@@ -19,6 +19,7 @@
   <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
   <link href="{{ asset('css/item/item_index.css') }}" rel="stylesheet">
   <link href="{{ asset('css/item/item_show.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/item/item_edit.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="/css/icon.css">
   <link href="/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="/css/now-ui-kit.css">
@@ -34,7 +35,7 @@
     <div class="left">
     </div>
     <div class="center">
-      <div class="container">
+      <div class="container" id="edit-content">
         <form action="/item/update" method="POST" class="edit-form">
         @csrf
           <input type="hidden" name="id" value="{{ $item->id }}">

@@ -1,0 +1,19 @@
+.form-wrapper {
+  display: flex;
+  height: calc(100vh - 63px - 69px);
+}
+
+#edit-content {
+  overflow: auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+.edit_img {
+  display: flex;
+  justify-content: center;
+}
+
+.edit-img {
+  height: 400px;
+  width: 508px;
+}

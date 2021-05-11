@@ -14,10 +14,6 @@ body {
   height: calc(100vh - 63px - 69px);
 }
 
-.form-wrapper {
-  display: flex;
-}
-
 .center {
   width: 1140px;
   height: 100%;
