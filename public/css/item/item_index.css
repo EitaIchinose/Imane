@@ -76,11 +76,6 @@ body {
   margin-top: 50px;
 }
 
-.edit-form {
-  height: calc(100vh - 63px - 13px - 69px);
-  margin-top: 13px;
-}
-
 @media screen and (max-width:991px) {
   #gallery {
     display: flex;
@@ -92,10 +87,6 @@ body {
   }
 
   .wrapper {
-    height: auto;
-  }
-
-  .form-wrapper {
     height: auto;
   }
 }
