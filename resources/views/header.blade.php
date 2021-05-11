@@ -2,13 +2,13 @@
   <div class="container">
     <div class="navbar-translate">
       <a class="navbar-brand" href="/" style="font-size:15px;">I.mane</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#example-navbar-primary" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-bar bar1"></span>
-        <span class="navbar-toggler-bar bar2"></span>
-        <span class="navbar-toggler-bar bar3"></span>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse" id="example-navbar-primary">
+      <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar top-bar"></span>
+          <span class="navbar-toggler-bar middle-bar"></span>
+          <span class="navbar-toggler-bar bottom-bar"></span>
+        </button>
+      </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="/img/blurred-image-1.jpg">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
           <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span style="font-size:15px; padding-right:8px;">{{ Auth::user()->name }}</span>

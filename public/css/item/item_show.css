@@ -51,3 +51,53 @@ h2 {
   height: 400px;
   width: 508px;
 }
+
+h3 {
+  position: relative;
+  padding: 0.6em;
+  background: #FFCE7F;
+}
+
+h3:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid #FFCE7F;
+  width: 0;
+  height: 0;
+}
+
+.content-name {
+  padding: 0;
+  position: relative;
+}
+
+.content-name.content-name-li, .content-name-li {
+  color: black;
+  border-left: solid 8px orange;/*左側の線*/
+  background: whitesmoke;/*背景色*/
+  margin-bottom: 20px;/*下のバーとの余白*/
+  line-height: 1.5;
+  border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
+  padding: 0.5em;
+  list-style-type: none!important;
+}
+
+
+@media screen and (max-width:991px) {
+
+  .showImage {
+    margin:0 auto;
+  }
+
+  .show-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .show-container {
+    width: 600px;
+  }
+}

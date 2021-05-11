@@ -6,14 +6,6 @@ body {
   flex-direction: column;
 }
 
-.item-container {
-  /* margin-left: auto;
-  margin-right: auto;
-  width: 100vw;
-  height: 100vh;
-  padding: 20px 200px 0px; */
-} 
-
 .wrapper {
   font-family: Arial, sans-serif;
   background-image: url('../images/tesukiwashi-pattern-04.jpg');
@@ -32,14 +24,6 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-
-/* .left {
-  width: 380px;
-}
-
-.right {
-  width: 380px;
-} */
 
 #gallery {
   columns: 260px;
@@ -89,20 +73,6 @@ body {
   transition-duration: 0.5s;
 }
 
-@media screen and (max-width: 900px) {
-  body, .left, .right {
-    width: 100%;
-  }
-
-  .wrapper {
-    flex-direction: column;
-  }
-
-  .center {
-    order: -1;
-  }
-}
-
 .create-form {
   height: calc(100vh - 63px - 50px - 69px);
   margin-top: 50px;
@@ -111,4 +81,15 @@ body {
 .edit-form {
   height: calc(100vh - 63px - 13px - 69px);
   margin-top: 13px;
+}
+
+@media screen and (max-width:991px) {
+  #gallery {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .center {
+    width: 550px;
+  }
 }

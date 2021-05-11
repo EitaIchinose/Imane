@@ -14,24 +14,20 @@
     </div>
   </div>
   <div class="show-container">
-    <h2>アイテム名</h2>
-    <p class="show-item_name">{{ $item->image_name}}</p>
-    <hr class="hr_line">
-    <h2>色</h2>
-    <p class="show-item_name">{{ $item->color}}</p>
-    <hr class="hr_line">
-    <h2>サイズ</h2>
-    <p class="show-item_name">{{ $item->size}}</p>
-    <hr class="hr_line">
-    <h2>ブランド名</h2>
-    <p class="show-item_name">{{ $item->brand}}</p>
-    <hr class="hr_line">
-    <h2>着用頻度</h2>
-    <p class="show-item_name">{{ $frequency}}</p>
-    <hr class="hr_line">
-    <h2>カテゴリー</h2>
-    <p class="show-item_name">{{ $category }}</p>
-    <hr class="hr_line">
+    <ul class="content-name">
+      <h3>アイテム名</h3>
+      <li class="content-name-li">{{ $item->image_name}}</li>
+      <h3>色</h3>
+      <li class="content-name-li">{{ $item->color }}</li>
+      <h3>サイズ</h3>
+      <li class="content-name-li">{{ $item->size }}</li>
+      <h3>ブランド名</h3>
+      <li class="content-name-li">{{ $item->brand }}</li>
+      <h3>着用頻度</h3>
+      <li class="content-name-li">{{ $frequency }}</li>
+      <h3>カテゴリー</h3>
+      <li class="content-name-li">{{ $category }}</li>
+    </ul>
   </div>
 </div>
 
