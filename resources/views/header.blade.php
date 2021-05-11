@@ -8,7 +8,7 @@
           <span class="navbar-toggler-bar bottom-bar"></span>
         </button>
       </div>
-    <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="/img/blurred-image-1.jpg">
+    <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="/css/images/blurred-image-1.jpg">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
           <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span style="font-size:15px; padding-right:8px;">{{ Auth::user()->name }}</span>
