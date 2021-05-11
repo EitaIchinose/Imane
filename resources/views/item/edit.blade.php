@@ -27,7 +27,6 @@
 
 </head>
 <body class="index-page sidebar-collapse">
-<body>
   <header id="app">
     @include('header')
   </header>

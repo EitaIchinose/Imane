@@ -1,11 +1,11 @@
 .form-wrapper {
   display: flex;
-  height: calc(100vh - 63px);
-  overflow: auto;
-  -webkit-overflow-scrolling:touch;
+  height: calc(100vh - 63px - 69px);
 }
 
 #edit-content {
+  overflow: auto;
+  -webkit-overflow-scrolling:touch;
 }
 
 .edit_img {

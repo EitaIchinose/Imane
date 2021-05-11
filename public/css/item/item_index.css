@@ -94,4 +94,8 @@ body {
   .wrapper {
     height: auto;
   }
+
+  .form-wrapper {
+    height: auto;
+  }
 }
