@@ -27,7 +27,7 @@
 # DEMO
 
 ## **トップページ**
-[![Image from Gyazo](https://i.gyazo.com/10de6d0d9cba8adc62d299bb7562ed49.gif)](https://gyazo.com/10de6d0d9cba8adc62d299bb7562ed49)
+![Image from Gyazo](https://i.gyazo.com/10de6d0d9cba8adc62d299bb7562ed49.gif)
 
 ## **アイテム登録画面**
 [![Image from Gyazo](https://i.gyazo.com/d9a02399a56947b52a88a4ed893f7433.png)](https://gyazo.com/d9a02399a56947b52a88a4ed893f7433)
@@ -36,7 +36,7 @@
 [![Image from Gyazo](https://i.gyazo.com/69b4f1e3335361b713138d5509aecadc.jpg)](https://gyazo.com/69b4f1e3335361b713138d5509aecadc)
 
 ## **表示切り替え機能（カテゴリー別）**
-[![Image from Gyazo](https://i.gyazo.com/e46e7c38beb4c2457ec7b90c716ac79a.gif)](https://gyazo.com/e46e7c38beb4c2457ec7b90c716ac79a)
+![Image from Gyazo](https://i.gyazo.com/e46e7c38beb4c2457ec7b90c716ac79a.gif)
 
 # 使用技術（開発環境）
 
