@@ -11,7 +11,7 @@
 
 # 本番環境
 
-[Imane](http://35.73.88.121/)
+[Imane](https://i-mane.herokuapp.com/)
 
 ### ログイン情報(テスト用)
 
