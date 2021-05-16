@@ -11,7 +11,7 @@
 
 # 本番環境
 
-[Imane](https://i-mane.herokuapp.com/)
+[Imane](http://i-mane.herokuapp.com/)
 
 ### ログイン情報(テスト用)
 
